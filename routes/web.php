@@ -34,8 +34,13 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/', [App\Http\Controllers\ClienteController::class, 'index'])->name('cliente');
 });
 
+// Route::delete('/cliente/{id}', [\App\Http\Controllers\ClienteController::class, 'destroy'])
+//   ->name('cliente.destroy');
+
 Route::delete('/cliente/{id}', [\App\Http\Controllers\ClienteController::class, 'destroy'])
-  ->name('cliente.destroy');
+  ->name('cliente');
+
+
 
 
 // Auth::routes();

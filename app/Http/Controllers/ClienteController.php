@@ -142,7 +142,10 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $cliente->delete();
+        // return redirect('cliente')->with('msn','Los datos se han eliminado con exito');
+
+        
         $cliente=Cliente::findOrFail($id);
         if (Storage::delete('public/'.$cliente->foto)) {
             Cliente::destroy($id);

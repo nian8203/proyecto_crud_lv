@@ -37,8 +37,7 @@
                 <th scope="row" hidden>{{$c->id}}</th>
                 <td>
                     <div class="">
-                        <img src="{{asset('storage').'/'.$c->foto}}" alt=""
-                        class="img-fluid rounded-circle border border-5 border-light" width="30px">
+                        <img src="{{asset('storage').'/'.$c->foto}}" alt="" class="img-fluid rounded-circle border border-5 border-light" width="30px">
                     </div>
                 </td>
                 <td>{{$c->documento}}</td>
@@ -57,12 +56,16 @@
                             </a>
                         </div>
                         <div class="col-sm-6">
+                            <!-- <form action="{{url('/cliente/'.$c->id)}}" method="post"> -->
                             <form action="{{url('/cliente/'.$c->id)}}" method="post">
                                 @csrf
                                 {{method_field('DELETE')}}
-                                <a href="" class="btn btn-default" style="color: #de3c2f;" onclick="return confirm('Esta seguro de eliminar este registro?')">
+                                <button type="submit" style="border: none; padding-top: 7px; color: #de3c2f;" class="btn btn-outline-link">
                                     <i class="fas fa-user-minus"></i>
-                                </a>
+                                </button>
+                                <!-- <a href="" type="" class="btn btn-default" style="color: #de3c2f;" onclick="return confirm('Esta seguro de eliminar este registro?')">
+                                    <i class="fas fa-user-minus"></i>
+                                </a> -->
                                 <!-- <input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Esta seguro de eliminar este registro?')" class="btn btn-danger"> -->
                             </form>
                         </div>
